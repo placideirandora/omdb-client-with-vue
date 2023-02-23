@@ -61,11 +61,11 @@ export default {
   methods: {
     async onSearchMovies() {
       try {
-        if (this.title < 3) {
+        if (this.title.length < 3) {
           return this.$toast.add({
             severity: 'warn',
             summary: 'Warn Message',
-            detail: 'The title of the movie is required',
+            detail: 'The title of the movie is required and should have at least 3 letters',
             life: 5000,
           });
         }
