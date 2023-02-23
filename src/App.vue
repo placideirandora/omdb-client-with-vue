@@ -1,5 +1,6 @@
 <template>
   <router-view></router-view>
+  <prime-toast position="bottom-center" />
 </template>
 
 <script>

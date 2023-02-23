@@ -13,7 +13,7 @@ import DialogService from 'primevue/dialogservice';
 import Image from 'primevue/image';
 import InputText from 'primevue/inputtext';
 import Paginator from 'primevue/paginator';
-import Skeleton from 'primevue/skeleton';
+import ProgressSpinner from 'primevue/progressspinner';
 import Textarea from 'primevue/textarea';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
@@ -34,7 +34,7 @@ app.component('prime-dialog', Dialog);
 app.component('prime-image', Image);
 app.component('prime-input-text', InputText);
 app.component('prime-paginator', Paginator);
-app.component('prime-skeleton', Skeleton);
+app.component('prime-progress-spinner', ProgressSpinner);
 app.component('prime-textarea', Textarea);
 app.component('prime-toast', Toast);
 
