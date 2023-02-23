@@ -1,2 +1,2 @@
-export const OMDB_API_KEY = '29c18836';
-export const BASE_URL = 'http://www.omdbapi.com';
+export const OMDB_API_KEY = '37e91e2d';
+export const BASE_URL = 'https://www.omdbapi.com';
