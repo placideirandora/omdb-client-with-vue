@@ -63,7 +63,7 @@ import {
   addBookmarkedMovie,
   isBookmarkedMovie,
   removeBookmarkedMovie,
-} from '@/bookmark.helper';
+} from '@/bookmark.utils';
 
 export default {
   name: 'omdb-movie-details',

@@ -29,7 +29,7 @@
 
 <script>
 import MovieCard from '@/components/MovieCard.vue';
-import { getBookmarkedMovies } from '@/bookmark.helper';
+import { getBookmarkedMovies } from '@/bookmark.utils';
 
 export default {
   name: 'omdb-bookmarked-movies',
