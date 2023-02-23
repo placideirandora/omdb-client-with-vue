@@ -1,26 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <dialog-demo />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DialogDemo from './components/DialogDemo.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    'dialog-demo': DialogDemo,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
