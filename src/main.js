@@ -19,9 +19,11 @@ import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
 
 import App from './App';
+import router from './router';
 
 const app = createApp(App);
 
+app.use(router);
 app.use(PrimeVue, { ripple: true });
 app.use(ToastService);
 app.use(DialogService);

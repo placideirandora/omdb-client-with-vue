@@ -1,15 +1,10 @@
 <template>
-  <dialog-demo />
+  <router-view></router-view>
 </template>
 
 <script>
-import DialogDemo from './components/DialogDemo.vue';
-
 export default {
   name: 'App',
-  components: {
-    'dialog-demo': DialogDemo,
-  },
 };
 </script>
 
