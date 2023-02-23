@@ -1,18 +1,17 @@
 <template>
   <section>
     <p class="text-6xl text-center">OMDB CLIENT</p>
-    <div class="flex flex-row justify-content-center">
+    <div class="flex flex-row justify-content-center flex-wrap">
       <prime-input-text
         type="text"
         v-model="title"
         placeholder="Search movies by title"
-        class="p-inputtext-md w-3 mr-3"
+        class="p-inputtext-md mr-3 input-text"
         @keyup.enter="onSearchMovies"
       />
       <prime-button
         label="Search"
         @click="onSearchMovies"
-        autofocus
         class="p-button-md"
       />
     </div>
@@ -28,7 +27,7 @@
       v-if="!loading && !movies.length"
       class="flex flex-column align-items-center"
     >
-      <p class="text-center mt-8">No movies</p>
+      <p class="mt-8">No movies</p>
       <prime-button
         icon="pi pi-bookmark"
         label="View Bookmarked Movies"
@@ -105,4 +104,16 @@ export default {
 </script>
 
 <style lang="scss">
+.input-text {
+  width: 25rem;
+
+  @media screen and (max-width: 500px) {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 98%;
+  }
+}
 </style>

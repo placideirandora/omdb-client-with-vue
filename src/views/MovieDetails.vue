@@ -1,6 +1,6 @@
 <template>
   <section class="flex justify-content-center">
-    <div class="bg-white w-6 border-round p-6">
+    <div class="bg-white border-round p-6">
       <div v-if="loading" class="flex justify-content-center">
         <prime-progress-spinner aria-label="spinner" class="mt-8" />
       </div>
@@ -124,10 +124,15 @@ export default {
 };
 </script>
 
-<style>
+<styl lang="scss">
 .poster {
-  height: 350px;
-  width: 550px;
+  height: 30rem;
+  width: 30rem;
   object-fit: cover;
+
+  @media screen and (max-width: 530px) {
+    height: 80%;
+    width: 80%;
+  }
 }
-</style>
+</styl>

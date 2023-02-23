@@ -1,5 +1,5 @@
 <template>
-  <prime-card style="width: 25em" class="mb-5">
+  <prime-card class="mb-5 movie-card">
     <template #header>
       <img :src="movie.Poster" style="height: 15rem; object-fit: cover" />
     </template>
@@ -34,4 +34,15 @@ export default {
 </script>
 
 <style lang="scss">
+.movie-card {
+  width: 28rem;
+
+  @media screen and (max-width: 700px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 98%;
+  }
+}
 </style>
