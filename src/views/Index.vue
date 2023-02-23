@@ -7,7 +7,7 @@
         v-model="title"
         placeholder="Search movies by title"
         class="p-inputtext-md w-3 mr-3"
-         @keyup.enter="onSearchMovies"
+        @keyup.enter="onSearchMovies"
       />
       <prime-button
         label="Search"
@@ -21,25 +21,7 @@
       v-if="!loading && movies.length"
       class="flex flex-column align-items-center my-5"
     >
-      <prime-card
-        style="width: 25em"
-        v-for="movie in movies"
-        :key="movie.imdbID"
-        class="mb-5"
-      >
-        <template #header>
-          <img :src="movie.Poster" style="height: 15rem; object-fit: cover" />
-        </template>
-        <template #title> {{ movie.Title }} </template>
-        <template #subtitle> {{ movie.Year }} </template>
-        <template #content>
-          <prime-button
-            icon="pi pi-external-link"
-            label="View Details"
-            @click="onViewDetails(movie.imdbID)"
-          />
-        </template>
-      </prime-card>
+      <movie-card v-for="movie in movies" :movie="movie" :key="movie.imdbID" />
     </div>
 
     <div v-if="!loading && !movies.length">
@@ -55,9 +37,13 @@
 <script>
 import { axios } from '@/axios';
 import { OMDB_API_KEY } from '@/constants';
+import MovieCard from '@/components/MovieCard.vue';
 
 export default {
   name: 'omdb-index',
+  components: {
+    'movie-card': MovieCard,
+  },
   data() {
     return {
       title: '',
@@ -97,7 +83,6 @@ export default {
         this.movies = data.Search;
         this.loading = false;
       } catch (error) {
-        console.log('ERROR: ', error);
         this.loading = false;
         this.$toast.add({
           severity: 'error',

@@ -10,11 +10,11 @@ import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Dialog from 'primevue/dialog';
 import DialogService from 'primevue/dialogservice';
-import Image from 'primevue/image';
 import InputText from 'primevue/inputtext';
 import Paginator from 'primevue/paginator';
 import ProgressSpinner from 'primevue/progressspinner';
 import Textarea from 'primevue/textarea';
+import Divider from 'primevue/divider';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
 
@@ -31,11 +31,11 @@ app.use(DialogService);
 app.component('prime-button', Button);
 app.component('prime-card', Card);
 app.component('prime-dialog', Dialog);
-app.component('prime-image', Image);
 app.component('prime-input-text', InputText);
 app.component('prime-paginator', Paginator);
 app.component('prime-progress-spinner', ProgressSpinner);
 app.component('prime-textarea', Textarea);
+app.component('prime-divider', Divider);
 app.component('prime-toast', Toast);
 
 app.mount('#app');
