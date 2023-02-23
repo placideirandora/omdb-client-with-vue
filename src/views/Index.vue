@@ -24,10 +24,18 @@
       <movie-card v-for="movie in movies" :movie="movie" :key="movie.imdbID" />
     </div>
 
-    <div v-if="!loading && !movies.length">
+    <div
+      v-if="!loading && !movies.length"
+      class="flex flex-column align-items-center"
+    >
       <p class="text-center mt-8">No movies</p>
+      <prime-button
+        icon="pi pi-bookmark"
+        label="View Bookmarked Movies"
+        class="p-button-outlined p-button-md"
+        @click="$router.push('/bookmarked-movies')"
+      />
     </div>
-
     <div v-if="loading" class="flex justify-content-center">
       <prime-progress-spinner aria-label="spinner" class="mt-8" />
     </div>
@@ -91,10 +99,6 @@ export default {
           life: 5000,
         });
       }
-    },
-    onViewDetails(id) {
-      const route = this.$router.resolve(`/movie-details/${id}`);
-      window.open(route.href, '_blank');
     },
   },
 };

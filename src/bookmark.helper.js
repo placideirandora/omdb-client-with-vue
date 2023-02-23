@@ -1,5 +1,6 @@
 export const addBookmarkedMovie = (movie) => {
   let movies = JSON.parse(localStorage.getItem('movies')) || [];
+  movie.bookmarkedDate = new Date().toISOString();
   movies.push(movie);
   localStorage.setItem('movies', JSON.stringify(movies));
 };
@@ -16,5 +17,9 @@ export const removeBookmarkedMovie = (id) => {
 };
 
 export const getBookmarkedMovies = () => {
-  return JSON.parse(localStorage.getItem('movies')) || [];
+  let movies = JSON.parse(localStorage.getItem('movies')) || [];
+  movies.sort(
+    (a, b) => new Date(b.bookmarkedDate) - new Date(a.bookmarkedDate)
+  );
+  return movies;
 };
